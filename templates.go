@@ -17,14 +17,15 @@ var TemplatesPathFormat = "/api/v%d/templates"
 // Template is the JSON structure accepted by and returned from the SparkPost Templates API.
 // It's mostly metadata at this level - see Content and Options for more detail.
 type Template struct {
-	ID          string       `json:"id,omitempty"`
-	Content     Content      `json:"content,omitempty"`
-	Published   bool         `json:"published,omitempty"`
-	Name        string       `json:"name,omitempty"`
-	Description string       `json:"description,omitempty"`
-	LastUse     time.Time    `json:"last_use,omitempty"`
-	LastUpdate  time.Time    `json:"last_update_time,omitempty"`
-	Options     *TmplOptions `json:"options,omitempty"`
+	ID                    string       `json:"id,omitempty"`
+	Content               Content      `json:"content,omitempty"`
+	Published             bool         `json:"published,omitempty"`
+	Name                  string       `json:"name,omitempty"`
+	Description           string       `json:"description,omitempty"`
+	LastUse               time.Time    `json:"last_use,omitempty"`
+	LastUpdate            time.Time    `json:"last_update_time,omitempty"`
+	Options               *TmplOptions `json:"options,omitempty"`
+	SharedWithSubaccounts bool         `json:"shared_with_subaccounts,omitempty"`
 }
 
 // Content is what you'll send to your Recipients.
